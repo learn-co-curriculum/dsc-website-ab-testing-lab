@@ -18,7 +18,7 @@ Start by loading in the dataset stored in the file 'homepage_actions.csv'. Then 
 > Hints:
     * Start investigating the id column:
         * How many viewers also clicked?
-        * Are there any anomolies with the data; did anyone click who didn't view?
+        * Are there any anomalies with the data; did anyone click who didn't view?
         * Is there any overlap between the control and experiment groups? 
             * If so, how do you plan to account for this in your experimental design?
 
@@ -338,7 +338,7 @@ fs.p_value_welch_ttest(control.click, experiment.click)
 
 ## Verifying Results
 
-One sensible formulation of the data to answer the hypothesis test above, would be to create a binary variable representing each individual in the experiment and control group. This binary variable would represent whether or not that individual clicked on the homepage; 1 for they did and 0 if they did not. 
+One sensible formulation of the data to answer the hypothesis test above would be to create a binary variable representing each individual in the experiment and control group. This binary variable would represent whether or not that individual clicked on the homepage; 1 for they did and 0 if they did not. 
 
 The variance for the number of successes in a sample of a binomial variable with n observations is given by:
 
@@ -408,8 +408,8 @@ print(p_val)
 
 Does this result roughly match that of the previous statistical test?
 
-> Comment: Yes, while the p-value is slightly lower, both would lead to confident rejection of the null hypothesis. The experimental page appears to be the more effective design.
+> Comment: Yes, while the p-value is slightly lower, both would lead to confident rejection of the null hypothesis. The experimental page appears to be a more effective design.
 
 ## Summary
 
-In this lab, you continued to get more practice designing and conducting AB tests. This requried additional work preprocessing and formulating the initial problem in a suitable manner. Additionally, you also saw how to verify results, strengthening your knowledge of binomial variables, and reviewing initial statistical concepts of the central limit theorem, standard deviation, z-scores and their accompanying p-values.
+In this lab, you continued to get more practice designing and conducting AB tests. This required additional work preprocessing and formulating the initial problem in a suitable manner. Additionally, you also saw how to verify results, strengthening your knowledge of binomial variables, and reviewing initial statistical concepts of the central limit theorem, standard deviation, z-scores, and their accompanying p-values.
