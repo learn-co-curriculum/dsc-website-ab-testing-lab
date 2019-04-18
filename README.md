@@ -1,5 +1,5 @@
 
-# Website A/B Testing
+# Website A/B Testing - Lab
 
 ## Introduction
 
