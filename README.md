@@ -1,5 +1,5 @@
 
-# Website A/B Testing
+# Website A/B Testing - Lab
 
 ## Introduction
 
@@ -136,7 +136,11 @@ print("Number of Clickers who didn't view: {}".format(len(cids-vids)))
     Number of Clickers who didn't view: 0
 
 
-> Comment: Everyone who clicked, also viewed the homepage! (Thank goodness!)
+
+```python
+# Comment: Everyone who clicked, also viewed the homepage! 
+# (Thank goodness!)
+```
 
 
 ```python
@@ -148,7 +152,10 @@ print('Overlap of experiment and control groups: {}'.format(len(eids&cids)))
     Overlap of experiment and control groups: 0
 
 
-> Comment: No overlap between the experiment and control groups.
+
+```python
+# Comment: No overlap between the experiment and control groups.
+```
 
 ## Conduct a Statistical Test
 
@@ -408,7 +415,14 @@ print(p_val)
 
 Does this result roughly match that of the previous statistical test?
 
-> Comment: Yes, while the p-value is slightly lower, both would lead to confident rejection of the null hypothesis. The experimental page appears to be a more effective design.
+> Comment: **Your analysis here**
+
+
+```python
+# Comment: Yes, while the p-value is slightly lower, 
+# both would lead to confident rejection of the null hypothesis. 
+# The experimental page appears to be a more effective design.
+```
 
 ## Summary
 
