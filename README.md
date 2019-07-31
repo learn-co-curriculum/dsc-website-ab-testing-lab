@@ -114,10 +114,6 @@ df.head()
 
 
 
-## Conduct a Statistical Test
-
-Conduct a statistical test to determine whether the experimental homepage was more effective than that of the control group.
-
 
 ```python
 # __SOLUTION__ 
@@ -135,11 +131,6 @@ df.action.value_counts()
 
 
 ```python
-#Your code here
-```
-
-
-```python
 # __SOLUTION__ 
 cids = set(df[df.action=='click']['id'].unique())
 vids = set(df[df.action=='view']['id'].unique())
@@ -153,21 +144,12 @@ print("Number of Clickers who didn't view: {}".format(len(cids-vids)))
     Number of Clickers who didn't view: 0
 
 
-## Verifying Results
 
-One sensible formulation of the data to answer the hypothesis test above would be to create a binary variable representing each individual in the experiment and control group. This binary variable would represent whether or not that individual clicked on the homepage; 1 for they did and 0 if they did not. 
-
-The variance for the number of successes in a sample of a binomial variable with n observations is given by:
-
-## $n\bullet p (1-p)$
-
-Given this, perform 3 steps to verify the results of your statistical test:
-1. Calculate the expected number of clicks for the experiment group, if it had the same click-through rate as that of the control group. 
-2. Calculate the number of standard deviations that the actual number of clicks was from this estimate. 
-3. Finally, calculate a p-value using the normal distribution based on this z-score.
-
-### Step 1:
-Calculate the expected number of clicks for the experiment group, if it had the same click-through rate as that of the control group. 
+```python
+# __SOLUTION__ 
+# Comment: Everyone who clicked, also viewed the homepage! 
+# (Thank goodness!)
+```
 
 
 ```python
@@ -182,11 +164,13 @@ print('Overlap of experiment and control groups: {}'.format(len(eids&cids)))
 
 
 ```python
-#Your code here
+# __SOLUTION__ 
+# Comment: No overlap between the experiment and control groups.
 ```
 
-### Step 2:
-Calculate the number of standard deviations that the actual number of clicks was from this estimate.
+## Conduct a Statistical Test
+
+Conduct a statistical test to determine whether the experimental homepage was more effective than that of the control group.
 
 
 ```python
@@ -275,9 +259,6 @@ df.head()
 
 
 
-### Step 3: 
-Finally, calculate a p-value using the normal distribution based on this z-score.
-
 
 ```python
 # __SOLUTION__ 
@@ -365,20 +346,9 @@ control.head()
 
 
 ```python
-#Your code here
-```
-
-
-```python
 # __SOLUTION__ 
 import flatiron_stats as fs
 ```
-
-### Analysis:
-
-Does this result roughly match that of the previous statistical test?
-
-> Comment: **Your analysis here**
 
 
 ```python
@@ -393,9 +363,26 @@ fs.p_value_welch_ttest(control.click, experiment.click)
 
 
 
-## Summary
+## Verifying Results
 
-In this lab, you continued to get more practice designing and conducting AB tests. This required additional work preprocessing and formulating the initial problem in a suitable manner. Additionally, you also saw how to verify results, strengthening your knowledge of binomial variables, and reviewing initial statistical concepts of the central limit theorem, standard deviation, z-scores, and their accompanying p-values.
+One sensible formulation of the data to answer the hypothesis test above would be to create a binary variable representing each individual in the experiment and control group. This binary variable would represent whether or not that individual clicked on the homepage; 1 for they did and 0 if they did not. 
+
+The variance for the number of successes in a sample of a binomial variable with n observations is given by:
+
+## $n\bullet p (1-p)$
+
+Given this, perform 3 steps to verify the results of your statistical test:
+1. Calculate the expected number of clicks for the experiment group, if it had the same click-through rate as that of the control group. 
+2. Calculate the number of standard deviations that the actual number of clicks was from this estimate. 
+3. Finally, calculate a p-value using the normal distribution based on this z-score.
+
+### Step 1:
+Calculate the expected number of clicks for the experiment group, if it had the same click-through rate as that of the control group. 
+
+
+```python
+#Your code here
+```
 
 
 ```python
@@ -411,6 +398,14 @@ print(expected_experiment_clicks_under_null)
     838.0168067226891
 
 
+
+### Step 2:
+Calculate the number of standard deviations that the actual number of clicks was from this estimate.
+
+
+```python
+#Your code here
+```
 
 
 ```python
@@ -436,6 +431,14 @@ print(z_score)
     3.6625360854823588
 
 
+### Step 3: 
+Finally, calculate a p-value using the normal distribution based on this z-score.
+
+
+```python
+#Your code here
+```
+
 
 ```python
 # __SOLUTION__ 
@@ -446,3 +449,21 @@ print(p_val)
 
     0.00012486528006951198
 
+
+### Analysis:
+
+Does this result roughly match that of the previous statistical test?
+
+> Comment: **Your analysis here**
+
+
+```python
+# __SOLUTION__ 
+# Comment: Yes, while the p-value is slightly lower, 
+# both would lead to confident rejection of the null hypothesis. 
+# The experimental page appears to be a more effective design.
+```
+
+## Summary
+
+In this lab, you continued to get more practice designing and conducting AB tests. This required additional work preprocessing and formulating the initial problem in a suitable manner. Additionally, you also saw how to verify results, strengthening your knowledge of binomial variables, and reviewing initial statistical concepts of the central limit theorem, standard deviation, z-scores, and their accompanying p-values.
