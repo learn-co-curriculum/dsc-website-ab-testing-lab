@@ -366,11 +366,7 @@ expected_experiment_clicks_under_null = control_rate * len(experiment)
 print(expected_experiment_clicks_under_null)
 ```
 
-
-
-
     838.0168067226891
-
 
 
 ### Step 2:
