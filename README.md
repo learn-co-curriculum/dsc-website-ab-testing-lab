@@ -1,4 +1,3 @@
-
 # Website A/B Testing - Lab
 
 ## Introduction
